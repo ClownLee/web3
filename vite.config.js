@@ -6,9 +6,15 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   resolve: {
-    // 配置路径别名
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
+  server:{
+    host: "0.0.0.0",
+    port: 8080,
+    proxy: {
+      '/api': 'https://8000-clownlee-web3-qruu8x6b5w2.ws-us44.gitpod.io/api'
+    }
+  }
 })
