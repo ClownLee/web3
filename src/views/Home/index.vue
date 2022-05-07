@@ -6,9 +6,17 @@
 
 <script setup>
 import { getCurrentInstance } from 'vue';
-const _this = getCurrentInstance()
+const { appContext: { config: { globalProperties } } } = getCurrentInstance()
 
-console.log(_this)
+console.log(globalProperties)
+
+const getData =  async () => {
+  const res = await globalProperties.$axios.demo.hello()
+
+  console.log(res)
+}
+
+getData()
 
 </script>
 
