@@ -16,7 +16,7 @@ const getData =  async () => {
   console.log(res)
 }
 
-getData()
+// getData()
 
 </script>
 
